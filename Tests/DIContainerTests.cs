@@ -8,7 +8,7 @@ namespace Tests
     public class DIContainerTests
     {
         [TestMethod]
-        public void SimpleDependency()
+        public void SimpleDependencyTest()
         {
             DependenciesConfiguration config = new DependenciesConfiguration();
             config.Register<ISmth, ClassForISmth>(LifeTime.Singleton);
@@ -19,7 +19,7 @@ namespace Tests
         }
 
         [TestMethod]
-        public void DependencyTTLCheck()
+        public void LifeTimeTest()
         {
             DependenciesConfiguration config = new DependenciesConfiguration();
             config.Register<ISmth, ClassForISmth>(LifeTime.Singleton);
@@ -35,7 +35,7 @@ namespace Tests
         }
 
         [TestMethod]
-        public void ManyImplementationsResolve()
+        public void ManyImplementationsResolveTest()
         {
             DependenciesConfiguration config = new DependenciesConfiguration();
             config.Register<IService, FirstForIService>();
@@ -48,7 +48,7 @@ namespace Tests
         }
 
         [TestMethod]
-        public void InnerDependencyCheck()
+        public void InnerDependencyTest()
         {
             DependenciesConfiguration config = new DependenciesConfiguration();
             config.Register<ISmth, ClassForISmth>();
@@ -65,7 +65,7 @@ namespace Tests
         }
 
         [TestMethod]
-        public void SimpleRecursionCheck()
+        public void SimpleRecursionTest()
         {
             DependenciesConfiguration config = new DependenciesConfiguration();
             config.Register<IClient, ClassForIClient>();
@@ -77,7 +77,7 @@ namespace Tests
         }
 
         [TestMethod]
-        public void SimpleOpenGeneric()
+        public void SimpleOpenGenericTest()
         {
             DependenciesConfiguration config = new DependenciesConfiguration();
             config.Register<IAnother<ISmth>, First<ISmth>>();
